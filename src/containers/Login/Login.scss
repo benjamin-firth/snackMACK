@@ -1,0 +1,48 @@
+.login {
+  align-items: center;
+  background-color: #302D50;
+  border: 2px solid #83A1B0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 55%;
+  justify-content: space-around;
+  padding: 20px;
+  width: 70%;
+
+  h1 {
+    color: #83A1B0;
+    font-size: 90px;
+    letter-spacing: 2px;
+  }
+  
+  h3 {
+    color: #83A1B0;
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+
+  button {
+    background-color: #83A1B0;
+    border-radius: 5px;
+    color: #302D50;
+    cursor: pointer;
+    font-size: 40px;
+    padding: 5px;
+  }
+
+  button:hover {
+    background-color: #302D50;
+    color: #83A1B0;
+  }
+
+  select {
+    background-color: #302D50;
+    color: #83A1B0;
+    cursor: pointer;
+    font-size: 35px;
+    margin: 0px 20px 0px 0px;
+    width: 300px;
+  }
+
+}
