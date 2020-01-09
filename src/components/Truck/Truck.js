@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Truck = () => {
+const Truck = ({ name, desc }) => {
 
   return (
     <article>
-      <h4>NAME</h4>
-      <p>This is a description of the food truck</p>
+      <h4>{name}</h4>
+      <p>{desc}</p>
     </article>
   )
 }
