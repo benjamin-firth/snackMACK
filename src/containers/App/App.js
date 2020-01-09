@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import { Route, NavLink } from 'react-router-dom'
 import './App.scss';
 import Login from '../Login/Login';
 
@@ -11,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Login />
+        <Route exact path='/' component={Login} />
       </main>
     )
   }
