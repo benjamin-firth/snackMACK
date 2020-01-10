@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrucksContainer should match the snapshot 1`] = `
+<main>
+  <Header />
+  <div
+    className="sidebar"
+  >
+    <button>
+      VIEW FAVORITE LIST
+    </button>
+    <div
+      className="inner-scroll-container"
+    />
+  </div>
+</main>
+`;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './TrucksContainer.scss';
 import Header from '../Header/Header';
 import Truck from '../Truck/Truck';
+import { fetchFoodTrucks } from '../../utils/apiCalls';
 
 class TruckSidebar extends Component {
   constructor() {
@@ -12,8 +13,7 @@ class TruckSidebar extends Component {
   }
 
   componentDidMount() {
-    fetch('https://cors-anywhere.herokuapp.com/http://data.streetfoodapp.com/1.1/schedule/calgary')
-      .then(res => res.json())
+    fetchFoodTrucks()
       .then(data => {
         const vendors = data.vendors;
         const vendorKeys = Object.keys(vendors);
