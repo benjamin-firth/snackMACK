@@ -5,8 +5,8 @@ const Header = () => {
 
   return (
     <header>
-      <h2>snackMack</h2>
       <h3>Food Nearby</h3>
+      <h2>snackMack</h2>
     </header>
   )
 }
