@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { Route, NavLink } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import './App.scss';
 import Login from '../Login/Login';
 import TrucksContainer from '../../components/TrucksContainer/TrucksContainer';
