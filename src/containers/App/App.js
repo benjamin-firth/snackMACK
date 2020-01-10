@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import { Route, NavLink } from 'react-router-dom'
 import './App.scss';
 import Login from '../Login/Login';
+import TrucksContainer from '../../components/TrucksContainer/TrucksContainer';
 
 class App extends Component {
   constructor() {
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <main>
         <Route exact path='/' component={Login} />
+        <Route path='/main' component={TrucksContainer} />
       </main>
     )
   }
