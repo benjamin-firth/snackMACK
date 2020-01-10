@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Truck should match the snapshot 1`] = `
+<article
+  className="truck-card"
+>
+  <h4 />
+  <hr />
+  <p />
+</article>
+`;
