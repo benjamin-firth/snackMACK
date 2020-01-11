@@ -20,6 +20,7 @@ class Login extends Component {
             <select>
               <option value='vancouver' >Vancouver</option>
               <option value='calgary' >Calgary</option>
+              <option value='toronto' >Toronto</option>
             </select>
             <button>SUBMIT</button>
           </form>

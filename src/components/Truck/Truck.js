@@ -1,11 +1,14 @@
 import React from 'react';
+import { addPotentialLocation } from '../../actions/index'
+import { connect } from 'react-redux';
 import './Truck.scss';
 import imagecomingsoon from '../../styles/imagecomingsoon.png';
 
-const Truck = ({ name, desc, image }) => {
-  // image ? console.log(image.logo) : null
-  if (image) {
-    console.log(image.logo)
+export const Truck = ({ name, desc, image, addPotentialLocation }) => {
+
+  const submitPotentialLocation = () => {
+    const location = { name, desc, image };
+    addPotentialLocation(location);
   }
 
   return (
@@ -14,9 +17,16 @@ const Truck = ({ name, desc, image }) => {
       <hr/>
       {image ? <img src={image.logo} alt='Food truck logo' height='100' width='170' /> : <img src={imagecomingsoon} alt='Food truck logo' height='100' width='170' />}
       <p>{desc}</p>
-      <button>ADD TO POTENTIAL LOCATIONS</button>
+      <button 
+        type='button' 
+        onClick={submitPotentialLocation}
+        >ADD TO POTENTIAL LOCATIONS</button>
     </article>
   )
 }
 
-export default Truck;
+const mapDispatchToProps = dispatch => ({
+  addPotentialLocation: location => dispatch(addPotentialLocation(location))
+})
+
+export default connect(null, mapDispatchToProps)(Truck);
