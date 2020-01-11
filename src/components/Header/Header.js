@@ -5,8 +5,12 @@ const Header = () => {
 
   return (
     <header>
-      <h3>Food Nearby</h3>
-      <h2>snackMack</h2>
+      <div className='left'>
+        <h3>Food Nearby</h3>
+      </div>
+      <div className='right'>
+        <h2>snackMACK</h2>
+      </div>
     </header>
   )
 }

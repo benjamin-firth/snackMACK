@@ -1,16 +1,30 @@
 header {
   align-items: center;
   background-color: #231E42;
+  border-bottom: 2px solid #83A1B0;
   display: flex;
   height: 10vh;
   justify-content: space-between;
 
   h2 {
     color: #83A1B0;
+    font-size: 60px;
+    letter-spacing: 5px;
 
   }
 
   h3 {
     color: #83A1B0;
+    font-size: 35px;
+  }
+
+  .left {
+    text-align: center;
+    width: 30%;
+  }
+
+  .right {
+    text-align: center;
+    width: 70%;
   }
 }
