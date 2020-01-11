@@ -1,8 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Truck from '../Truck/Truck';
 import imagecomingsoon from '../../styles/imagecomingsoon.png';
 import './PotentialLocations.scss';
 
-const PotentialLocations = () => {
+export const PotentialLocations = ({ potentialLocations }) => {
+
+  const allPotentialLocations = potentialLocations.map(location => {
+    return <Truck name={location.name} desc={location.desc} image={location.image} />
+  })
 
   return (
     <div className='right-side-box'>
@@ -10,9 +16,7 @@ const PotentialLocations = () => {
         <article>
           <h2>Potential Date Locations</h2>
           <div>
-            <h3>FAKE CARD</h3>
-            <img src={imagecomingsoon} alt='Food truck logo' height='100' width='170' />
-            <p>FAKE DESCRIPTION: asasdff asdfasd asdss sss asdfasdfasd sdddf  sd dss ss s dfasdf!</p>
+            {allPotentialLocations}
           </div>
         </article>
       </section>
@@ -20,4 +24,8 @@ const PotentialLocations = () => {
   )
 }
 
-export default PotentialLocations;
+const mapStateToProps = state => ({
+  potentialLocations: state.potentialLocation
+})
+
+export default connect(mapStateToProps)(PotentialLocations);

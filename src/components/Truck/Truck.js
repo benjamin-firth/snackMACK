@@ -1,14 +1,19 @@
 import React from 'react';
-import { addPotentialLocation } from '../../actions/index'
+import { addPotentialLocation, removePotentialLocation } from '../../actions/index'
 import { connect } from 'react-redux';
 import './Truck.scss';
 import imagecomingsoon from '../../styles/imagecomingsoon.png';
 
-export const Truck = ({ name, desc, image, addPotentialLocation }) => {
+export const Truck = ({ name, desc, image, addPotentialLocation, removePotentialLocation }) => {
 
   const submitPotentialLocation = () => {
     const location = { name, desc, image };
     addPotentialLocation(location);
+  }
+
+  const deletePotentialLocation = () => {
+    const location = { name, desc, image };
+    removePotentialLocation(location);
   }
 
   return (
@@ -21,12 +26,17 @@ export const Truck = ({ name, desc, image, addPotentialLocation }) => {
         type='button' 
         onClick={submitPotentialLocation}
         >ADD TO POTENTIAL LOCATIONS</button>
+      <button 
+        type='button' 
+        onClick={deletePotentialLocation}
+        >REMOVE LOCATION</button>
     </article>
   )
 }
 
 const mapDispatchToProps = dispatch => ({
-  addPotentialLocation: location => dispatch(addPotentialLocation(location))
+  addPotentialLocation: location => dispatch(addPotentialLocation(location)),
+  removePotentialLocation: locationName => dispatch(removePotentialLocation(locationName))
 })
 
 export default connect(null, mapDispatchToProps)(Truck);
