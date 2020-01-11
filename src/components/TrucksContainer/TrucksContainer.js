@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './TrucksContainer.scss';
 import Header from '../Header/Header';
 import Truck from '../Truck/Truck';
+import PotentialLocations from '../PotentialLocations/PotentialLocations';
 import { fetchFoodTrucks } from '../../utils/apiCalls';
 
 class TruckSidebar extends Component {
   constructor() {
     super();
     this.state = {
-      nearbyTrucks: []
+      nearbyTrucks: [],
     }
   }
 
@@ -44,11 +45,14 @@ class TruckSidebar extends Component {
     return (
       <main>
         <Header />
-        <div className='sidebar'>
-          <button>VIEW FAVORITE LIST</button>
-          <div className='inner-scroll-container'>
-            {Trucks}
+        <div className='mainpage-container'>
+          <div className='sidebar'>
+            <button>VIEW POTENTIAL LOCATIONS</button>
+            <div className='inner-scroll-container'>
+              {Trucks}
+            </div>
           </div>
+          <PotentialLocations />
         </div>
       </main>
     )

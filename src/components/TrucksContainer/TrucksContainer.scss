@@ -1,8 +1,17 @@
+.right-side-box {
+  width: 100%;
+}
+
+.mainpage-container {
+  background-color: #231E42;
+  display: flex;
+}
+
 .sidebar {
   background-color: #231E42;
   border-right: 2px solid #83A1B0;
   padding: 20px;
-  width: 30%;
+  width: 40%;
 
   button {
     background-color: #83A1B0;
