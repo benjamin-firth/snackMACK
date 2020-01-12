@@ -10,6 +10,7 @@ describe('TrucksContainer', () => {
   })
 
 it('should match the snapshot', () => {
+    // assert.isDefined(AccountFormComponent);
     expect(wrapper).toMatchSnapshot();
   })
 

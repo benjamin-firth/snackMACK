@@ -6,7 +6,7 @@ import Truck from '../Truck/Truck';
 import PotentialLocations from '../PotentialLocations/PotentialLocations';
 import { fetchFoodTrucks } from '../../utils/apiCalls';
 
-export class TruckSidebar extends Component {
+export class TrucksContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -64,4 +64,4 @@ export const mapStateToProps = state => ({
   city: state.city
 })
 
-export default connect(mapStateToProps)(TruckSidebar);
+export default connect(mapStateToProps)(TrucksContainer);
