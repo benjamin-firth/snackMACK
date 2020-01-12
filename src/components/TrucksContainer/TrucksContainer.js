@@ -16,8 +16,6 @@ export class TrucksContainer extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.city);
-    console.log(this.props);
     fetchFoodTrucks(this.props.city.city)
       .then(data => {
         const vendors = data.vendors;
@@ -46,7 +44,6 @@ export class TrucksContainer extends Component {
         />) 
     })
 
-
     return (
       <main>
         <Header />
@@ -60,6 +57,7 @@ export class TrucksContainer extends Component {
           <TruckMap 
             lat={this.props.city.lat}
             long={this.props.city.long}
+            trucks={this.state.nearbyTrucks}
             key={this.props.city}
             />
           {/* <PotentialLocations /> */}

@@ -10,17 +10,15 @@ export class Login extends Component {
     this.state = {
       city: 'calgary',
       lat: 51.0,
-      long: 114.0
+      long: -114.0
     }
   }
 
   handleChange = (city) => {
     this.setState({ city })
-    console.log(cityData);
     const lat = cityData[city].lat;
     const long = cityData[city].long;
     this.setState({ lat, long });
-    console.log(city, lat, long);
   }
 
   handleSubmit = () => {
