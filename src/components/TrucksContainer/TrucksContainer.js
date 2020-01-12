@@ -26,7 +26,7 @@ export class TrucksContainer extends Component {
             name: vendors[key].name, 
             desc: vendors[key].description,
             location: vendors[key].last,
-            image: vendors[key].images
+            image: vendors[key].images,
           }
         });
         this.setState({ nearbyTrucks });
