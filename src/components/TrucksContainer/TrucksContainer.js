@@ -4,6 +4,7 @@ import './TrucksContainer.scss';
 import Header from '../Header/Header';
 import Truck from '../Truck/Truck';
 import PotentialLocations from '../PotentialLocations/PotentialLocations';
+import TruckMap from '../Map/Map';
 import { fetchFoodTrucks } from '../../utils/apiCalls';
 
 export class TrucksContainer extends Component {
@@ -15,7 +16,9 @@ export class TrucksContainer extends Component {
   }
 
   componentDidMount() {
-    fetchFoodTrucks(this.props.city)
+    console.log(this.props.city);
+    console.log(this.props);
+    fetchFoodTrucks(this.props.city.city)
       .then(data => {
         const vendors = data.vendors;
         const vendorKeys = Object.keys(vendors);
@@ -27,7 +30,7 @@ export class TrucksContainer extends Component {
             image: vendors[key].images
           }
         });
-        this.setState({ nearbyTrucks })
+        this.setState({ nearbyTrucks });
       })
   }
 
@@ -43,6 +46,7 @@ export class TrucksContainer extends Component {
         />) 
     })
 
+
     return (
       <main>
         <Header />
@@ -53,7 +57,12 @@ export class TrucksContainer extends Component {
               {Trucks}
             </div>
           </div>
-          <PotentialLocations />
+          <TruckMap 
+            lat={this.props.city.lat}
+            long={this.props.city.long}
+            key={this.props.city}
+            />
+          {/* <PotentialLocations /> */}
         </div>
       </main>
     )
@@ -61,7 +70,7 @@ export class TrucksContainer extends Component {
 }
 
 export const mapStateToProps = state => ({
-  city: state.city
+  city: state.city,
 })
 
 export default connect(mapStateToProps)(TrucksContainer);

@@ -8,7 +8,11 @@ export const removePotentialLocation = potentialLocation => ({
   potentialLocation
 })
 
-export const chooseCity = city => ({
+export const chooseCity = (city, lat, long) => ({
   type: 'CHOOSE_CITY',
-  city
+  city: {
+    city,
+    lat,
+    long
+  }
 })
