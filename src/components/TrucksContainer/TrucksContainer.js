@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './TrucksContainer.scss';
 import Header from '../Header/Header';
 import Truck from '../Truck/Truck';
@@ -14,7 +15,7 @@ class TruckSidebar extends Component {
   }
 
   componentDidMount() {
-    fetchFoodTrucks()
+    fetchFoodTrucks(this.props.city)
       .then(data => {
         const vendors = data.vendors;
         const vendorKeys = Object.keys(vendors);
@@ -59,4 +60,8 @@ class TruckSidebar extends Component {
   }
 }
 
-export default TruckSidebar;
+export const mapStateToProps = state => ({
+  city: state.city
+})
+
+export default connect(mapStateToProps)(TruckSidebar);
