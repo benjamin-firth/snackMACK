@@ -14,24 +14,54 @@ exports[`Login should match the snapshot 1`] = `
       “The food truck locator app to bring your dates to the next level!”
     </h3>
     <form>
-      <select>
-        <option
-          value="vancouver"
-        >
-          Vancouver
-        </option>
+      <select
+        onChange={[Function]}
+      >
         <option
           value="calgary"
         >
           Calgary
         </option>
         <option
+          value="edmonton"
+        >
+          Edmonton
+        </option>
+        <option
+          value="halifax"
+        >
+          Halifax
+        </option>
+        <option
+          value="hamilton"
+        >
+          Hamilton
+        </option>
+        <option
+          value="ottawa"
+        >
+          Ottawa
+        </option>
+        <option
           value="toronto"
         >
           Toronto
         </option>
+        <option
+          value="vancouver"
+        >
+          Vancouver
+        </option>
+        <option
+          value="victoria"
+        >
+          Victoria
+        </option>
       </select>
-      <button>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
         SUBMIT
       </button>
     </form>

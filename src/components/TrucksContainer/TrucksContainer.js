@@ -6,7 +6,7 @@ import Truck from '../Truck/Truck';
 import PotentialLocations from '../PotentialLocations/PotentialLocations';
 import { fetchFoodTrucks } from '../../utils/apiCalls';
 
-class TruckSidebar extends Component {
+export class TruckSidebar extends Component {
   constructor() {
     super();
     this.state = {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { chooseCity } from '../../actions';
 import './Login.scss';
 
-class Login extends Component {
+export class Login extends Component {
   constructor() {
     super();
     this.state = {
