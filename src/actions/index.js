@@ -7,3 +7,8 @@ export const removePotentialLocation = potentialLocation => ({
   type: 'REMOVE_POTENTIAL_LOCATION',
   potentialLocation
 })
+
+export const chooseCity = city => ({
+  type: 'CHOOSE_CITY',
+  city
+})
