@@ -25,6 +25,11 @@ exports[`Login should match the snapshot 1`] = `
         >
           Calgary
         </option>
+        <option
+          value="toronto"
+        >
+          Toronto
+        </option>
       </select>
       <button>
         SUBMIT

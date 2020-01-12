@@ -6,6 +6,24 @@ exports[`Truck should match the snapshot 1`] = `
 >
   <h4 />
   <hr />
+  <img
+    alt="Food truck logo"
+    height="100"
+    src="imagecomingsoon.png"
+    width="170"
+  />
   <p />
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    ADD TO POTENTIAL LOCATIONS
+  </button>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    REMOVE LOCATION
+  </button>
 </article>
 `;

@@ -4,14 +4,19 @@ exports[`TrucksContainer should match the snapshot 1`] = `
 <main>
   <Header />
   <div
-    className="sidebar"
+    className="mainpage-container"
   >
-    <button>
-      VIEW FAVORITE LIST
-    </button>
     <div
-      className="inner-scroll-container"
-    />
+      className="sidebar"
+    >
+      <button>
+        VIEW POTENTIAL LOCATIONS
+      </button>
+      <div
+        className="inner-scroll-container"
+      />
+    </div>
+    <Connect(PotentialLocations) />
   </div>
 </main>
 `;
