@@ -4,6 +4,7 @@ import App from './App';
 
 describe('App', () => {
   let wrapper;
+  let store;
 
   beforeEach(() => {
     wrapper = shallow( <App />)
