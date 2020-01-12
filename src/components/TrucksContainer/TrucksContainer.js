@@ -12,6 +12,7 @@ export class TrucksContainer extends Component {
     super();
     this.state = {
       nearbyTrucks: [],
+      showMap: true
     }
   }
 
@@ -32,6 +33,10 @@ export class TrucksContainer extends Component {
       })
   }
 
+  toggleMap = () => {
+    this.setState({showMap: !this.state.showMap})
+  }
+
   render() {
     const Trucks = this.state.nearbyTrucks.map(truck => {
       return (
@@ -49,18 +54,20 @@ export class TrucksContainer extends Component {
         <Header />
         <div className='mainpage-container'>
           <div className='sidebar'>
-            <button>VIEW POTENTIAL LOCATIONS</button>
+            <button onClick={this.toggleMap}>{this.state.showMap? 'VIEW POTENTIAL LOCATIONS' : 'VIEW MAP OF TRUCKS'}</button>
             <div className='inner-scroll-container'>
               {Trucks}
             </div>
           </div>
-          <TruckMap 
-            lat={this.props.city.lat}
-            long={this.props.city.long}
-            trucks={this.state.nearbyTrucks}
-            key={this.props.city}
-            />
-          {/* <PotentialLocations /> */}
+          {this.state.showMap? (
+            <TruckMap 
+              lat={this.props.city.lat}
+              long={this.props.city.long}
+              trucks={this.state.nearbyTrucks}
+              key={this.props.city}
+              />
+          ) : <PotentialLocations />
+          }
         </div>
       </main>
     )
