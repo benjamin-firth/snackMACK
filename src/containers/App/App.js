@@ -1,8 +1,8 @@
 import React, { Component} from 'react';
-import { Route } from 'react-router-dom'
+import { Route } from 'react-router-dom';
 import './App.scss';
 import Login from '../Login/Login';
-import TrucksContainer from '../../components/TrucksContainer/TrucksContainer';
+import TrucksContainer from '../../containers/TrucksContainer/TrucksContainer';
 
 class App extends Component {
   constructor() {

@@ -12,9 +12,13 @@ exports[`Header should match the snapshot 1`] = `
   <div
     className="right"
   >
-    <h2>
-      snackMACK
-    </h2>
+    <NavLink
+      to="/"
+    >
+      <h2>
+        snackMACK
+      </h2>
+    </NavLink>
   </div>
 </header>
 `;

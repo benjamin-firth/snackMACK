@@ -3,7 +3,7 @@ import { togglePotentialLocation } from '../../actions/index'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Truck.scss';
-import imagecomingsoon from '../../styles/imagecomingsoon.png';
+import imagecomingsoon from '../../images/imagecomingsoon.png';
 
 export class Truck extends Component {
   submitPotentialLocation = () => {

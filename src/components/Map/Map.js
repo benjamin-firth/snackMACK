@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Icon } from "leaflet";
 import PropTypes from 'prop-types';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
-import foodTruck from '../../styles/food-truck.svg';
-import favFoodTruck from '../../styles/food-truck.svg';
+import foodTruck from '../../images/food-truck.svg';
+import favFoodTruck from '../../images/food-truck.svg';
 import './Map.scss';
 
 class TruckMap extends Component {
