@@ -50,6 +50,7 @@ export const mockPotentialLocationsAfterToggle = [{
 
 export const mockFilteredPotentialLocations = {
   desc: "Our food trailer is designed for efficiently producing quality comfort food! We serve baked potatoes loaded with a variety of toppings! BBQ Pulled Pork Tex Mex Mushroom Swiss Classic English Sheppard's Pie",
+  isPotentialLocation: true,
   image: undefined,
   location: {
     display: "Prairie Horizon Pop Up Market",
@@ -133,3 +134,18 @@ export const mockCity = {
 }
 
 export const mockCityActionObj = {city: {city: "calgary", lat: 51, long: -114}, type: "CHOOSE_CITY"}
+
+export const mockToggleTruck = {
+  truck: {
+    desc: "Our food trailer is designed for efficiently producing quality comfort food! We serve baked potatoes loaded with a variety of toppings! BBQ Pulled Pork Tex Mex Mushroom Swiss Classic English Sheppard's Pie",
+    isPotentialLocation: true,
+    image: undefined,
+    location: {
+      display: "Prairie Horizon Pop Up Market",
+      latitude: 51.19624517,
+      longitude: -113.99491753,
+      time: 1578762000
+    },
+    name: "Baked And Loaded"
+  }
+}
