@@ -1,5 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Icon } from "leaflet";
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import foodTruck from '../../styles/food-truck.svg';
+import favFoodTruck from '../../styles/food-truck.svg';
+import './Map.scss';
 
 class TruckMap extends Component {
   constructor() {
@@ -18,11 +22,20 @@ class TruckMap extends Component {
   };
 
   render() {
+    const foodtruckIcon = new Icon({
+      iconUrl: foodTruck,
+      iconSize: [25, 25]
+    });
+    const favFoodtruckIcon = new Icon({
+      iconUrl: favFoodTruck,
+      iconSize: [25, 25]
+    });
     const { lat, long, trucks } = this.props;
     const trucksNearby = trucks.filter(truck => truck.location !== undefined).map(truck => (
       <Marker
           key={truck.name}
           name={truck.name}
+          icon={foodtruckIcon}
           position={[
             truck.location.latitude,
             truck.location.longitude
@@ -32,8 +45,6 @@ class TruckMap extends Component {
           }}
         />
     ))
-
-    console.log(trucks)
 
     return (
       <Map center={[lat, long]} zoom={10}>
