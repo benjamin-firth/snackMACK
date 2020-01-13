@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Truck from '../Truck/Truck';
-import imagecomingsoon from '../../styles/imagecomingsoon.png';
 import './PotentialLocations.scss';
 
-export const PotentialLocations = ({ potentialLocations }) => {
+export const PotentialLocations = ({ allTrucks }) => {
 
-  const allPotentialLocations = potentialLocations.map(location => {
-    return <Truck name={location.name} desc={location.desc} image={location.image} />
+  const allPotentialLocations = allTrucks.filter(truck => truck.isPotentialLocation === true).map(location => {
+    return <Truck truck={location} />
   })
 
   return (
@@ -25,7 +24,7 @@ export const PotentialLocations = ({ potentialLocations }) => {
 }
 
 const mapStateToProps = state => ({
-  potentialLocations: state.potentialLocation
+  allTrucks: state.allTrucks
 })
 
 export default connect(mapStateToProps)(PotentialLocations);
