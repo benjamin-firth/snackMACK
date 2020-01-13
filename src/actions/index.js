@@ -16,3 +16,8 @@ export const chooseCity = (city, lat, long) => ({
     long
   }
 })
+
+export const setTrucks = trucks => ({
+  type: 'SET_TRUCKS',
+  trucks
+})

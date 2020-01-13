@@ -6,6 +6,7 @@ import Truck from '../Truck/Truck';
 import PotentialLocations from '../PotentialLocations/PotentialLocations';
 import TruckMap from '../Map/Map';
 import { fetchFoodTrucks } from '../../utils/apiCalls';
+import { setTrucks } from '../../actions';
 
 export class TrucksContainer extends Component {
   constructor() {
@@ -27,9 +28,11 @@ export class TrucksContainer extends Component {
             desc: vendors[key].description,
             location: vendors[key].last,
             image: vendors[key].images,
+            isPotentialLocation: false
           }
         });
         this.setState({ nearbyTrucks });
+        this.props.setTrucks(nearbyTrucks);
       })
   }
 
@@ -74,8 +77,13 @@ export class TrucksContainer extends Component {
   }
 }
 
+
 export const mapStateToProps = state => ({
   city: state.city,
 })
 
-export default connect(mapStateToProps)(TrucksContainer);
+export const mapDispatchToProps = dispatch => ({
+  setTrucks: trucks => dispatch(setTrucks(trucks))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(TrucksContainer);
