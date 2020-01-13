@@ -1,6 +1,14 @@
+.background-image {
+  background: url('../../styles/dave-lastovskiy-RygIdTavhkQ-unsplash.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .login-container {
   align-items: center;
-  background-color: #231E42;
+  background-color: rgba(35, 30, 66, 0.7);
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -34,8 +42,8 @@
     background-color: #83A1B0;
     border-radius: 5px;
     color: #302D50;
-    font-size: 40px;
-    padding: 5px;
+    font-size: 39px;
+    padding: 0px 12px;
   }
 
   button:hover {
