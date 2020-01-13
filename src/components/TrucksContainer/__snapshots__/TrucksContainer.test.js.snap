@@ -9,14 +9,19 @@ exports[`TrucksContainer should match the snapshot 1`] = `
     <div
       className="sidebar"
     >
-      <button>
+      <button
+        onClick={[Function]}
+      >
         VIEW POTENTIAL LOCATIONS
       </button>
       <div
         className="inner-scroll-container"
       />
     </div>
-    <Connect(PotentialLocations) />
+    <TruckMap
+      key="test"
+      trucks={Array []}
+    />
   </div>
 </main>
 `;

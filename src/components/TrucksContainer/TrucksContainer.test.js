@@ -4,9 +4,10 @@ import { TrucksContainer } from './TrucksContainer';
 
 describe('TrucksContainer', () => {
   let wrapper;
+  let allTrucks = [{}]
 
   beforeEach(() => {
-    wrapper = shallow( <TrucksContainer />)
+    wrapper = shallow( <TrucksContainer allTrucks={[]} city='test'/>)
   })
 
 it('should match the snapshot', () => {

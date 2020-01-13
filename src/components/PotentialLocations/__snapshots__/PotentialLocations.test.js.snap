@@ -11,16 +11,7 @@ exports[`PotentialLocations should match the snapshot 1`] = `
       <h2>
         Potential Date Locations
       </h2>
-      <div>
-        <Connect(Truck)
-          desc="Our food trailer is designed for efficiently producing quality comfort food! We serve baked potatoes loaded with a variety of toppings! BBQ Pulled Pork Tex Mex Mushroom Swiss Classic English Sheppard's Pie"
-          name="Baked And Loaded"
-        />
-        <Connect(Truck)
-          desc="Our food trailer is designed for efficiently producing quality comfort food! We serve baked potatoes loaded with a variety of toppings! BBQ Pulled Pork Tex Mex Mushroom Swiss Classic English Sheppard's Pie"
-          name="Test Food Truck 2"
-        />
-      </div>
+      <div />
     </article>
   </section>
 </div>

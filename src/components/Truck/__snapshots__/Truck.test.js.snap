@@ -19,11 +19,5 @@ exports[`Truck should match the snapshot 1`] = `
   >
     ADD TO POTENTIAL LOCATIONS
   </button>
-  <button
-    onClick={[Function]}
-    type="button"
-  >
-    REMOVE LOCATION
-  </button>
 </article>
 `;

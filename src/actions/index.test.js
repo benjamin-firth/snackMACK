@@ -2,32 +2,34 @@ import * as actions from './index';
 import * as mockData from '../utils/mockData';
 
 describe('actions', () => {
-  describe('addPotentialLocation', () => {
-    it('should return an object containing type: "ADD_POTENTIAL_LOCATION"', () => {
+  describe('setTrucks', () => {
+    it('should return an object containing type: "SET_TRUCKS"', () => {
       // setup
       const expected = {
-        type: 'ADD_POTENTIAL_LOCATION',
-        potentialLocation: mockData.mockPotentialLocations
+        type: 'SET_TRUCKS',
+        trucks: mockData.mockPotentialLocations
       }
       // execution
-      const result = actions.addPotentialLocation(mockData.mockPotentialLocations);
+      const result = actions.setTrucks(mockData.mockPotentialLocations);
+      // expectation
+      expect(result).toEqual(expected);
+    })
+  });
+
+  describe('togglePotentialLocation', () => {
+    it('should return an object containing type: "TOGGLE_POTENTIAL_LOCATION"', () => {
+      // setup
+      const expected = {
+        type: 'TOGGLE_POTENTIAL_LOCATION',
+        truck: mockData.mockFilteredPotentialLocations
+      }
+      // execution
+      const result = actions.togglePotentialLocation(mockData.mockFilteredPotentialLocations);
       // expectation
       expect(result).toEqual(expected);
     })
   })
 
-  describe('removePotentialLocation', () => {
-    it('should return an object containing type: "REMOVE_POTENTIAL_LOCATION"', () => {
-      // setup
-      const expected = {
-        type: 'REMOVE_POTENTIAL_LOCATION',
-        potentialLocation: mockData.mockFilteredPotentialLocations
-      }
-      // execution
-      const result = actions.removePotentialLocation(mockData.mockPotentialLocations[0]);
-      // expectation
-      expect(result).toEqual(expected);
-    })
-  })
+  
 })
  

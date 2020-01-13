@@ -7,7 +7,7 @@ describe('PotentialLocations', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow( <PotentialLocations potentialLocations={mockData.mockPotentialLocations} />)
+    wrapper = shallow( <PotentialLocations potentialLocations={mockData.mockPotentialLocations} allTrucks={mockData.mockPotentialLocations}/>)
   })
 
   it('should match the snapshot', () => {

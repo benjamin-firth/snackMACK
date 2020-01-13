@@ -6,7 +6,7 @@ describe('Truck', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow( <Truck />)
+    wrapper = shallow( <Truck truck='test' />)
   })
 
   it('should match the snapshot', () => {
