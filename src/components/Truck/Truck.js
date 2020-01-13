@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { togglePotentialLocation } from '../../actions/index'
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './Truck.scss';
 import imagecomingsoon from '../../styles/imagecomingsoon.png';
 
@@ -27,8 +28,12 @@ export class Truck extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   togglePotentialLocation: truck => dispatch(togglePotentialLocation(truck))
 })
+
+Truck.propTypes = {
+  truck: PropTypes.string
+}
 
 export default connect(null, mapDispatchToProps)(Truck);
