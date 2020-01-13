@@ -1,0 +1,31 @@
+.right-side-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.potential-locations-container {
+  background-color: #302D50;
+  border-radius: 10px;
+  height: 70vh;
+  width: 50vw;
+
+  article {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+
+    div {
+      overflow: scroll;
+      height: 49vh;
+    }
+  }
+
+  h2 {
+    border-bottom: 1px solid #83A1B0;
+    color: #83A1B0;
+    font-size: 45px;
+    margin-bottom: 20px;
+  }
+}
