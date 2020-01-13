@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`map should match the snapshot 1`] = `
+<Map
+  center={
+    Array [
+      "40.0",
+      "40.0",
+    ]
+  }
+  zoom={10}
+>
+  <ForwardRef(Leaflet(TileLayer))
+    attribution="© <a href=\\"http://osm.org/copyright\\">OpenStreetMap</a> contributors"
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  />
+</Map>
+`;
