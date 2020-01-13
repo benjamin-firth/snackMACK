@@ -1,0 +1,34 @@
+.right-side-box {
+  width: 100%;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.mainpage-container {
+  background-color: #231E42;
+  display: flex;
+}
+
+.sidebar {
+  background-color: #231E42;
+  border-right: 2px solid #83A1B0;
+  padding: 20px;
+  width: 40%;
+
+  button {
+    background-color: #83A1B0;
+    border-radius: 5px;
+    color: #302D50;
+    font-size: 21px;
+    margin-bottom: 25px;
+    width: 100%;
+  }
+  
+  .inner-scroll-container {
+    overflow: scroll;
+    height: 83vh;
+  }
+}
