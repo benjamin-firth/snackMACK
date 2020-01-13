@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# snackMACK
 
-## Available Scripts
+## Welcome Ben's 'snackMACK' food and dating app!
 
-In the project directory, you can run:
+Have you ever wanted to impress people you meet on dating apps with your knowledge of local food truck cuisine? Look no further!
 
-### `npm start`
+## This app utilizes:
+- React / Redux
+- Router
+- Sass/SCSS
+- React-Leaflet Library
+- The streetfoodapp API
+- Enzyme / Jest
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setup
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Feel free to pull down this repo, run 'npm install'.
 
-### `npm test`
+To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:3000/`. Enter `control + c` in your terminal to stop the server at any time.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you want, feel free to run `npm test` to check out our coverage and make sure everything is passing!
 
-### `npm run build`
+### Wins
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project was a lot of fun. I would say some of the best things that were accomplished: 
+1. Implementing testing in React for nested async functions such as fetch. 
+2. Implementing a leaflet map, and then figuring out how to get it to dynamically render (as it doesn't render with the DOM) in a way to show the button changes.
+3. It was important to us to get as close to 100% tested as possible. Besides some Leaflet and Router testing, I was able to test everything else.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Challenges
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Most of my successes were also large challenges that I had to overcome, so this list is a bit of a repeat:
+1. Implementing a leaflet map, and then figuring out how to get it to dynamically render (as it doesn't render with the DOM) in a way to show the button changes.
+2. Testing some of the more nested async functions as well as testing Leaflet.
 
-### `npm run eject`
+### Future Iterations
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+If given more time:
+1. I would have created a more interactive experience for the user. I want to implement a text feature so that once you've picked a location, you can send that as a text to your potential date.
+2. I'd also like to turn this into a Progressive Web App for phone use.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### ScreenShots
+#### Welcome Page
+<img width="1440" alt="Screen Shot 2020-01-13 at 3 43 19 PM" src="https://user-images.githubusercontent.com/32349614/72298896-a137e300-361c-11ea-953c-015db63ed9a8.png">
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Map View
+<img width="1440" alt="Screen Shot 2020-01-13 at 3 42 27 PM" src="https://user-images.githubusercontent.com/32349614/72298939-b90f6700-361c-11ea-8a06-6a5994dd577b.png">
 
-## Learn More
+#### Potential Locations View
+<img width="1440" alt="Screen Shot 2020-01-13 at 3 42 52 PM" src="https://user-images.githubusercontent.com/32349614/72298998-d9d7bc80-361c-11ea-9dba-0e08b68dc47d.png">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Ben Firth](https://github.com/benjamin-firth)
