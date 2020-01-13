@@ -125,3 +125,11 @@ export const mockTruckAction = {
     name: "Baked And Loaded"
   }
 }
+
+export const mockCity = {
+  city: 'calgary',
+  lat: 51.0,
+  long: -114.0
+}
+
+export const mockCityActionObj = {city: {city: "calgary", lat: 51, long: -114}, type: "CHOOSE_CITY"}
