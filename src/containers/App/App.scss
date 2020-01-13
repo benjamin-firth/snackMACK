@@ -12,6 +12,13 @@ button {
   cursor: pointer;
 }
 
-// main {
+input,
+button,
+select,
+textarea {
+  outline: none;
   
-// }
+  &:active {
+    outline: none;
+  }
+}
