@@ -1,33 +1,16 @@
 import React, { Component } from 'react';
-import { addPotentialLocation, removePotentialLocation } from '../../actions/index'
+import { togglePotentialLocation } from '../../actions/index'
 import { connect } from 'react-redux';
 import './Truck.scss';
 import imagecomingsoon from '../../styles/imagecomingsoon.png';
 
 export class Truck extends Component {
-  constructor() {
-    super();
-    this.state = {
-      chosen: false
-    }
-  }
-
-  deletePotentialLocation = () => {
-    const { name, desc, image } = this.props;
-    const location = { name, desc, image };
-    this.props.removePotentialLocation(location);
-    this.setState({chosen: false})
-  }
-
   submitPotentialLocation = () => {
-    const { name, desc, image } = this.props;
-    const location = { name, desc, image };
-    this.props.addPotentialLocation(location);
-    this.setState({chosen: true})
+    this.props.togglePotentialLocation(this.props.truck)
   }
 
   render() {
-    const { name, desc, image } = this.props;
+    const { name, desc, image, isPotentialLocation } = this.props.truck;
 
     return (
       <article className='truck-card'>
@@ -35,25 +18,17 @@ export class Truck extends Component {
         <hr/>
         {image ? <img src={image.logo} alt='Food truck logo' height='100' width='170' /> : <img src={imagecomingsoon} alt='Food truck logo' height='100' width='170' />}
         <p>{desc}</p>
-        {!this.state.chosen ? (
-          <button 
-            type='button' 
-            onClick={this.submitPotentialLocation}
-            >ADD TO POTENTIAL LOCATIONS</button> 
-        ) : (
-          <button 
-            type='button' 
-            onClick={this.deletePotentialLocation}
-            >REMOVE LOCATION</button>
-        )}
+        <button 
+          type='button' 
+          onClick={this.submitPotentialLocation}
+          >{isPotentialLocation ? 'REMOVE LOCATION' : 'ADD TO POTENTIAL LOCATIONS'}</button> 
       </article>
     )
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  addPotentialLocation: location => dispatch(addPotentialLocation(location)),
-  removePotentialLocation: locationName => dispatch(removePotentialLocation(locationName))
+  togglePotentialLocation: truck => dispatch(togglePotentialLocation(truck))
 })
 
 export default connect(null, mapDispatchToProps)(Truck);
