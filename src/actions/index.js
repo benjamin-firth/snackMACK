@@ -1,13 +1,3 @@
-export const addPotentialLocation = potentialLocation => ({
-  type: 'ADD_POTENTIAL_LOCATION',
-  potentialLocation
-});
-
-export const removePotentialLocation = potentialLocation => ({
-  type: 'REMOVE_POTENTIAL_LOCATION',
-  potentialLocation
-})
-
 export const chooseCity = (city, lat, long) => ({
   type: 'CHOOSE_CITY',
   city: {
@@ -20,4 +10,9 @@ export const chooseCity = (city, lat, long) => ({
 export const setTrucks = trucks => ({
   type: 'SET_TRUCKS',
   trucks
+})
+
+export const togglePotentialLocation = truck => ({
+  type: 'TOGGLE_POTENTIAL_LOCATION',
+  truck
 })
