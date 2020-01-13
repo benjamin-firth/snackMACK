@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Icon } from "leaflet";
+import PropTypes from 'prop-types';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import foodTruck from '../../styles/food-truck.svg';
 import favFoodTruck from '../../styles/food-truck.svg';
@@ -78,6 +79,13 @@ class TruckMap extends Component {
       </Map>
     );
   }
+}
+
+TruckMap.propTypes = {
+  lat: PropTypes.string,
+  long: PropTypes.string,
+  trucks: PropTypes.array,
+  togglePotentialLocation: PropTypes.func
 }
 
 export default TruckMap;
