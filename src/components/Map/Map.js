@@ -33,6 +33,8 @@ class TruckMap extends Component {
         />
     ))
 
+    console.log(trucks)
+
     return (
       <Map center={[lat, long]} zoom={10}>
         <TileLayer
@@ -52,6 +54,7 @@ class TruckMap extends Component {
           >
             <div>
               <h2>{this.state.activeTruck.name}</h2>
+              {this.state.activeTruck.email && <p>Website: <a href={`https://www.${this.state.activeTruck.email}`} target="_blank">{this.state.activeTruck.email}</a></p>}
               <button
                 type='button' 
                 onClick={this.handleClick}>

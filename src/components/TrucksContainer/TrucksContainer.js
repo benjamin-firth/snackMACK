@@ -27,6 +27,7 @@ export class TrucksContainer extends Component {
             desc: vendors[key].description,
             location: vendors[key].last,
             image: vendors[key].images,
+            email: vendors[key].url,
             isPotentialLocation: false
           }
         });
