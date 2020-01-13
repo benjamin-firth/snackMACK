@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Truck from '../Truck/Truck';
 import './PotentialLocations.scss';
 
@@ -26,5 +27,10 @@ export const PotentialLocations = ({ allTrucks }) => {
 const mapStateToProps = state => ({
   allTrucks: state.allTrucks
 })
+
+PotentialLocations.propTypes = {
+  allTrucks: PropTypes.array
+}
+
 
 export default connect(mapStateToProps)(PotentialLocations);
