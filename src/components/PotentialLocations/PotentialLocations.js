@@ -6,7 +6,7 @@ import './PotentialLocations.scss';
 export const PotentialLocations = ({ allTrucks }) => {
 
   const allPotentialLocations = allTrucks.filter(truck => truck.isPotentialLocation === true).map(location => {
-    return <Truck truck={location} />
+    return <Truck truck={location} key={location.name}/>
   })
 
   return (
