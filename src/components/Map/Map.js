@@ -9,6 +9,14 @@ class TruckMap extends Component {
     }
   }
 
+  handleClick = () => {
+    this.props.togglePotentialLocation(this.state.activeTruck);
+    this.setState({ activeTruck: { 
+      ...this.state.activeTruck, 
+      isPotentialLocation: !this.state.activeTruck.isPotentialLocation
+    }});
+  };
+
   render() {
     const { lat, long, trucks } = this.props;
     const trucksNearby = trucks.filter(truck => truck.location !== undefined).map(truck => (
@@ -44,6 +52,11 @@ class TruckMap extends Component {
           >
             <div>
               <h2>{this.state.activeTruck.name}</h2>
+              <button
+                type='button' 
+                onClick={this.handleClick}>
+                  {this.state.activeTruck.isPotentialLocation ? 'REMOVE' : 'ADD'}
+                </button>
               <p>{this.state.activeTruck.desc}</p>
             </div>
           </Popup>
@@ -54,5 +67,3 @@ class TruckMap extends Component {
 }
 
 export default TruckMap;
-
-
