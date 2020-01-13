@@ -4,6 +4,7 @@ import './TrucksContainer.scss';
 import Header from '../Header/Header';
 import Truck from '../Truck/Truck';
 import PotentialLocations from '../PotentialLocations/PotentialLocations';
+import PropTypes from 'prop-types';
 import TruckMap from '../Map/Map';
 import { fetchFoodTrucks } from '../../utils/apiCalls';
 import { setTrucks, togglePotentialLocation } from '../../actions';
@@ -84,5 +85,12 @@ export const mapDispatchToProps = dispatch => ({
   setTrucks: trucks => dispatch(setTrucks(trucks)),
   togglePotentialLocation: truck => dispatch(togglePotentialLocation(truck))
 })
+
+TrucksContainer.propTypes = {
+  city: PropTypes.string,
+  allTrucks: PropTypes.array,
+  setTrucks: PropTypes.func,
+  togglePotentialLocation: PropTypes.func,
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(TrucksContainer);
