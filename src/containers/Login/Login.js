@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { chooseCity } from '../../actions';
 import { cityData } from '../../utils/cityData';
@@ -56,5 +57,9 @@ export class Login extends Component {
 export const mapDispatchToProps = dispatch => ({
   chooseCity: (city, lat, long) => dispatch(chooseCity(city, lat, long))
 })
+
+Login.propTypes = {
+  chooseCity: PropTypes.func
+}
 
 export default connect(null, mapDispatchToProps)(Login);
