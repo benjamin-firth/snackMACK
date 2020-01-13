@@ -30,6 +30,19 @@ describe('actions', () => {
     })
   })
 
-  
+  describe('chooseCity', () => {
+    it('should return an object containing type: "CHOOSE_CITY"', () => {
+      // setup
+      const expected = {
+        type: 'CHOOSE_CITY',
+        city: mockData.mockCity
+      }
+      // execution
+      const { city, lat, long } = mockData.mockCity;
+      const result = actions.chooseCity(city, lat, long);
+      // expectation
+      expect(result).toEqual(expected);
+    })
+  })
 })
  
