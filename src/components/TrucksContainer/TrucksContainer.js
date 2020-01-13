@@ -6,13 +6,12 @@ import Truck from '../Truck/Truck';
 import PotentialLocations from '../PotentialLocations/PotentialLocations';
 import TruckMap from '../Map/Map';
 import { fetchFoodTrucks } from '../../utils/apiCalls';
-import { setTrucks } from '../../actions';
+import { setTrucks, togglePotentialLocation } from '../../actions';
 
 export class TrucksContainer extends Component {
   constructor() {
     super();
     this.state = {
-      nearbyTrucks: [],
       showMap: true
     }
   }
@@ -31,7 +30,6 @@ export class TrucksContainer extends Component {
             isPotentialLocation: false
           }
         });
-        this.setState({ nearbyTrucks });
         this.props.setTrucks(nearbyTrucks);
       })
   }
@@ -41,13 +39,10 @@ export class TrucksContainer extends Component {
   }
 
   render() {
-    const Trucks = this.state.nearbyTrucks.map(truck => {
+    const Trucks = this.props.allTrucks.map(truck => {
       return (
         <Truck 
-          name={truck.name} 
-          desc={truck.desc} 
-          location={truck.location}
-          image={truck.image}
+          truck={truck}
           key={truck.name}
         />) 
     })
@@ -66,7 +61,8 @@ export class TrucksContainer extends Component {
             <TruckMap 
               lat={this.props.city.lat}
               long={this.props.city.long}
-              trucks={this.state.nearbyTrucks}
+              trucks={this.props.allTrucks}
+              togglePotentialLocation={this.props.togglePotentialLocation}
               key={this.props.city}
               />
           ) : <PotentialLocations />
@@ -80,10 +76,12 @@ export class TrucksContainer extends Component {
 
 export const mapStateToProps = state => ({
   city: state.city,
+  allTrucks: state.allTrucks
 })
 
 export const mapDispatchToProps = dispatch => ({
-  setTrucks: trucks => dispatch(setTrucks(trucks))
+  setTrucks: trucks => dispatch(setTrucks(trucks)),
+  togglePotentialLocation: truck => dispatch(togglePotentialLocation(truck))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TrucksContainer);
