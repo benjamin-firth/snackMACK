@@ -43,6 +43,7 @@ describe('potential location reducer', () => {
     [{
       desc: "Our food trailer is designed for efficiently producing quality comfort food! We serve baked potatoes loaded with a variety of toppings! BBQ Pulled Pork Tex Mex Mushroom Swiss Classic English Sheppard's Pie",
       image: undefined,
+      isPotentialLocation: true,
       location: {
         display: "Prairie Horizon Pop Up Market",
         latitude: 51.19624517,
