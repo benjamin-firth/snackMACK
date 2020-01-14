@@ -82,8 +82,8 @@ class TruckMap extends Component {
 }
 
 TruckMap.propTypes = {
-  lat: PropTypes.string,
-  long: PropTypes.string,
+  lat: PropTypes.number,
+  long: PropTypes.number,
   trucks: PropTypes.array,
   togglePotentialLocation: PropTypes.func
 }

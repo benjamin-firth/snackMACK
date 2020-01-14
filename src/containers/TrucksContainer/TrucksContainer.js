@@ -87,7 +87,7 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 TrucksContainer.propTypes = {
-  city: PropTypes.string,
+  city: PropTypes.object,
   allTrucks: PropTypes.array,
   setTrucks: PropTypes.func,
   togglePotentialLocation: PropTypes.func,

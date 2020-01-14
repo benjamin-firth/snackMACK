@@ -33,7 +33,7 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 Truck.propTypes = {
-  truck: PropTypes.string
+  truck: PropTypes.object
 }
 
 export default connect(null, mapDispatchToProps)(Truck);

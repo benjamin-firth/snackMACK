@@ -9,11 +9,10 @@ jest.mock('../../utils/apiCalls');
 
 describe('TrucksContainer', () => {
   let wrapper;
-  let allTrucks = [{}];
 
   beforeEach(() => {
     fetchFoodTrucks.mockImplementation(() => Promise.resolve(mockData.mockPotentialLocations));
-    wrapper = shallow( <TrucksContainer allTrucks={[]} city='test'/>)
+    wrapper = shallow( <TrucksContainer city={{}} setTrucks={jest.fn()} togglePotentialLocation={jest.fn()} allTrucks={[]} city='test'/>)
   })
 
 it('should match the snapshot', () => {
