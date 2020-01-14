@@ -6,7 +6,7 @@ describe('map', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow( <TruckMap lat='40.0' long='40.0' trucks={[{}, {}, {}]}/>)
+    wrapper = shallow( <TruckMap lat={40.0} long={40.0} trucks={[{}, {}, {}]}/>)
   })
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();

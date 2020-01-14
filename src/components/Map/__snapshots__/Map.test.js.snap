@@ -4,8 +4,8 @@ exports[`map should match the snapshot 1`] = `
 <Map
   center={
     Array [
-      "40.0",
-      "40.0",
+      40,
+      40,
     ]
   }
   zoom={10}
