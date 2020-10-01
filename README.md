@@ -2,6 +2,8 @@
 
 ## Welcome Ben's 'snackMACK' food and dating app!
 
+[Ben Firth](https://github.com/benjamin-firth)
+
 Have you ever wanted to impress people you meet on dating apps with your knowledge of local food truck cuisine? Look no further!
 
 ## This app utilizes:
@@ -51,4 +53,4 @@ If given more time:
 <img width="1440" alt="Screen Shot 2020-01-13 at 3 42 52 PM" src="https://user-images.githubusercontent.com/32349614/72298998-d9d7bc80-361c-11ea-9dba-0e08b68dc47d.png">
 
 
-[Ben Firth](https://github.com/benjamin-firth)
+
