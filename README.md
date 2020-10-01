@@ -5,6 +5,7 @@
 [Ben Firth](https://github.com/benjamin-firth)
 
 Have you ever wanted to impress people you meet on dating apps with your knowledge of local food truck cuisine? Look no further!
+Deployed using Surge.sh [here](https://snack-mack.surge.sh/).
 
 ## This app utilizes:
 - React / Redux
