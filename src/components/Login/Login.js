@@ -14,15 +14,17 @@ export const Login = () => {
   const dispatch = useDispatch();
 
   const handleChange = (newCity) => {
+    const newLat = cityData[newCity].lat;
+    const newLong = cityData[newCity].long;
     setCity(newCity);
-    setLat(cityData[city].lat);
-    setLong(cityData[city].long);
-  }
+    setLat(newLat);
+    setLong(newLong);
+  };
 
   const handleSubmit = () => {
     dispatch(chooseCity(city, lat, long));
     history.push('/main');
-  }
+  };
 
   return (
     <div className='background-image'>
@@ -46,11 +48,11 @@ export const Login = () => {
         </section>
       </div>
     </div>
-  )
-}
+  );
+};
 
 Login.propTypes = {
   chooseCity: PropTypes.func
-}
+};
 
 export default Login;
