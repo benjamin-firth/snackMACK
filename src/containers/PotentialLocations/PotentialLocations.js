@@ -1,14 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import Truck from '../Truck/Truck';
 import './PotentialLocations.scss';
 
-export const PotentialLocations = ({ allTrucks }) => {
-
+export const PotentialLocations = () => {
+  const allTrucks = useSelector(state => state.allTrucks);
   const allPotentialLocations = allTrucks.filter(truck => truck.isPotentialLocation === true).map(location => {
     return <Truck truck={location} key={location.name}/>
-  })
+  });
 
   return (
     <div className='right-side-box'>
@@ -21,16 +21,12 @@ export const PotentialLocations = ({ allTrucks }) => {
         </article>
       </section>
     </div>
-  )
-}
-
-const mapStateToProps = state => ({
-  allTrucks: state.allTrucks
-})
+  );
+};
 
 PotentialLocations.propTypes = {
   allTrucks: PropTypes.array
-}
+};
 
 
-export default connect(mapStateToProps)(PotentialLocations);
+export default PotentialLocations;
