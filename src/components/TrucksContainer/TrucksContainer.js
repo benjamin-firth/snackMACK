@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './TrucksContainer.scss';
-import Header from '../../components/Header/Header';
+import Header from '../Header/Header';
 import Truck from '../Truck/Truck';
 import PotentialLocations from '../PotentialLocations/PotentialLocations';
 import PropTypes from 'prop-types';
-import TruckMap from '../../components/Map/Map';
+import TruckMap from '../Map/Map';
 import { fetchFoodTrucks } from '../../utils/apiCalls';
 import { setTrucks, togglePotentialLocation } from '../../actions';
 

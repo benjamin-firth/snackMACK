@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.scss';
 import Login from '../Login/Login';
-import TrucksContainer from '../../containers/TrucksContainer/TrucksContainer';
+import TrucksContainer from '../TrucksContainer/TrucksContainer';
 
 const App = () => {
   return (
