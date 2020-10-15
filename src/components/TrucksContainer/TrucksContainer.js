@@ -68,7 +68,7 @@ export const TrucksContainer = () => {
         }
       </div>
     </main>
-  )
+  );
 };
 
 TrucksContainer.propTypes = {

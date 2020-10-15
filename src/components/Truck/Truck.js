@@ -25,8 +25,8 @@ export const Truck = ({ truck }) => {
         onClick={submitPotentialLocation}
         >{isPotentialLocation ? 'REMOVE LOCATION' : 'ADD TO POTENTIAL LOCATIONS'}</button> 
     </article>
-  )
-}
+  );
+};
 
 Truck.propTypes = {
   truck: PropTypes.object

@@ -13,7 +13,7 @@ const Header = () => {
         <NavLink to='/'><h2>snackMACK</h2></NavLink>
       </div>
     </header>
-  )
-}
+  );
+};
 
 export default Header;
