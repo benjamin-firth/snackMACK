@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './TrucksContainer.scss';
 import Header from '../../components/Header/Header';
 import Truck from '../Truck/Truck';
@@ -9,16 +9,14 @@ import TruckMap from '../../components/Map/Map';
 import { fetchFoodTrucks } from '../../utils/apiCalls';
 import { setTrucks, togglePotentialLocation } from '../../actions';
 
-export class TrucksContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      showMap: true
-    }
-  }
+export const TrucksContainer = () => {
+  const [showMap, changeMap] = useState(true);
+  const city = useSelector(state => state.city);
+  const allTrucks = useSelector(state => state.allTrucks);
+  const dispatch = useDispatch();
 
-  componentDidMount() {
-    fetchFoodTrucks(this.props.city.city)
+  useEffect(() => {
+    fetchFoodTrucks(city.city)
       .then(data => {
         const vendors = data.vendors;
         const vendorKeys = Object.keys(vendors);
@@ -32,65 +30,52 @@ export class TrucksContainer extends Component {
             isPotentialLocation: false
           }
         });
-        this.props.setTrucks(nearbyTrucks);
+        dispatch(setTrucks(nearbyTrucks));
       })
-  }
+  }, []);
 
-  toggleMap = () => {
-    this.setState({showMap: !this.state.showMap})
-  }
-
-  render() {
-    const Trucks = this.props.allTrucks.map(truck => {
-      return (
-        <Truck 
-          truck={truck}
-          key={truck.name}
-        />) 
-    })
-
+  const Trucks = allTrucks.map(truck => {
     return (
-      <main>
-        <Header />
-        <div className='mainpage-container'>
-          <div className='sidebar'>
-            <button onClick={this.toggleMap}>{this.state.showMap? 'VIEW POTENTIAL LOCATIONS' : 'VIEW MAP OF TRUCKS'}</button>
-            <div className='inner-scroll-container'>
-              {Trucks}
-            </div>
+      <Truck 
+        truck={truck}
+        key={truck.name}
+      />) 
+  });
+
+  const toggleMap = () => {
+    changeMap(!showMap);
+  };
+
+  return (
+    <main>
+      <Header />
+      <div className='mainpage-container'>
+        <div className='sidebar'>
+          <button onClick={toggleMap}>{showMap? 'VIEW POTENTIAL LOCATIONS' : 'VIEW MAP OF TRUCKS'}</button>
+          <div className='inner-scroll-container'>
+            {Trucks}
           </div>
-          {this.state.showMap? (
-            <TruckMap 
-              lat={this.props.city.lat}
-              long={this.props.city.long}
-              trucks={this.props.allTrucks}
-              togglePotentialLocation={this.props.togglePotentialLocation}
-              key={this.props.city}
-              />
-          ) : <PotentialLocations />
-          }
         </div>
-      </main>
-    )
-  }
-}
-
-
-export const mapStateToProps = state => ({
-  city: state.city,
-  allTrucks: state.allTrucks
-})
-
-export const mapDispatchToProps = dispatch => ({
-  setTrucks: trucks => dispatch(setTrucks(trucks)),
-  togglePotentialLocation: truck => dispatch(togglePotentialLocation(truck))
-})
+        {showMap? (
+          <TruckMap 
+            lat={city.lat}
+            long={city.long}
+            trucks={allTrucks}
+            togglePotentialLocation={(truck) => dispatch(togglePotentialLocation(truck))}
+            key={city}
+            />
+        ) : <PotentialLocations />
+        }
+      </div>
+    </main>
+  )
+};
 
 TrucksContainer.propTypes = {
   city: PropTypes.string,
   allTrucks: PropTypes.array,
   setTrucks: PropTypes.func,
   togglePotentialLocation: PropTypes.func,
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(TrucksContainer);
+export default TrucksContainer;
