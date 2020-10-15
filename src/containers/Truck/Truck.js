@@ -1,39 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { togglePotentialLocation } from '../../actions/index'
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Truck.scss';
 import imagecomingsoon from '../../images/imagecomingsoon.png';
 
-export class Truck extends Component {
-  submitPotentialLocation = () => {
-    this.props.togglePotentialLocation(this.props.truck)
-  }
+export const Truck = ({ truck }) => {
+  const dispatch = useDispatch();
 
-  render() {
-    const { name, desc, image, isPotentialLocation } = this.props.truck;
+  const submitPotentialLocation = () => {
+    dispatch(togglePotentialLocation(truck))
+  };
 
-    return (
-      <article className='truck-card'>
-        <h4>{name}</h4>
-        <hr/>
-        {image ? <img src={image.logo} alt='Food truck logo' height='100' width='170' /> : <img src={imagecomingsoon} alt='Food truck logo' height='100' width='170' />}
-        <p>{desc}</p>
-        <button 
-          type='button' 
-          onClick={this.submitPotentialLocation}
-          >{isPotentialLocation ? 'REMOVE LOCATION' : 'ADD TO POTENTIAL LOCATIONS'}</button> 
-      </article>
-    )
-  }
+  const { name, desc, image, isPotentialLocation } = truck;
+
+  return (
+    <article className='truck-card'>
+      <h4>{name}</h4>
+      <hr/>
+      {image ? <img src={image.logo} alt='Food truck logo' height='100' width='170' /> : <img src={imagecomingsoon} alt='Food truck logo' height='100' width='170' />}
+      <p>{desc}</p>
+      <button 
+        type='button' 
+        onClick={submitPotentialLocation}
+        >{isPotentialLocation ? 'REMOVE LOCATION' : 'ADD TO POTENTIAL LOCATIONS'}</button> 
+    </article>
+  )
 }
-
-export const mapDispatchToProps = dispatch => ({
-  togglePotentialLocation: truck => dispatch(togglePotentialLocation(truck))
-})
 
 Truck.propTypes = {
   truck: PropTypes.object
-}
+};
 
-export default connect(null, mapDispatchToProps)(Truck);
+export default Truck;
